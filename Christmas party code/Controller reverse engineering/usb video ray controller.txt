@@ -1,0 +1,39 @@
+usb video ray controller
+Axis: z rotation: vertical prop
+Axis: z axis: twisty knob
+Axis: x axis: horizontal turn
+Axis: Y axis: forward backwards
+Axis: x rotation: programable pot on face of controller, unused by ius
+Axis: y rotation: programable pot on face or controller, unused by ius
+1: manip close
+2: manip open
+3: focus out
+4: camera pan up
+5: question mark button, used to open manual
+6: Camera shot
+7: lights bright
+8: lights dim
+9: camera pan down
+10: focus in
+11: change cameras, unused by ius
+12: Record clip button
+13: 
+14:
+15:
+16:
+17:
+18:
+19:
+20:
+21:
+22:
+23:
+24:
+25:
+26:
+27:
+28:
+29:
+30:
+31:
+32:
