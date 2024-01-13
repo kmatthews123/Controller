@@ -1,0 +1,6 @@
+
+Pierre Gleizes - 10k Pot model from grabcad library
+
+Adafruit - everything pulled down for RP2040
+
+
