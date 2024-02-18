@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name "custom controller-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/custom controller-eagle-import.kicad_sym")(options "")(descr ""))
-)
