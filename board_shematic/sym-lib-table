@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name "board_shematic-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/board_shematic-eagle-import.kicad_sym")(options "")(descr ""))
-)

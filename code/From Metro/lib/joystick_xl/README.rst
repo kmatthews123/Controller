@@ -12,7 +12,7 @@ JoystickXL for CircuitPython
     :target: https://circuitpython-joystickxl.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
-.. image:: https://open.vscode.dev/badges/open-in-vscode.svg
+.. image:: https://img.shields.io/static/v1?logo=visualstudiocode&label=&message=Open%20in%20Visual%20Studio%20Code&labelColor=2c2c32&color=007acc&logoColor=007acc
     :target: https://open.vscode.dev/fasteddy516/CircuitPython_JoystickXL
     :alt: Open in Visual Studio Code
 
@@ -28,7 +28,7 @@ pilots, racing sim drivers and virtual farmers* - JoystickXL can help.
 Requirements
 ============
 *This driver relies on features that were introduced in CircuitPython
-version 7.0.0.*  **You must be running CircuitPython 7.0.0-beta.1 or newer
+version 7.x*  **You must be running CircuitPython 7.0.0 or newer
 on your device in order to use JoystickXL.**
 
 * This driver was made for devices running `Adafruit CircuitPython <https://www.adafruit.com/circuitpython>`_.
@@ -36,10 +36,31 @@ on your device in order to use JoystickXL.**
 
 * There are no dependencies on any other CircuitPython drivers, libraries or modules.
 
+* Pre-compiled (``.mpy``) versions of JoystickXL are available in the `releases <https://github.com/fasteddy516/CircuitPython_JoystickXL/releases>`_
+  section for CircuitPythons version 8.x and 9.x.  
+
+
+Limitations
+===========
+* A wired USB connection to the host device is required.  *Bluetooth
+  connectivity is not supported at this time.*
+
+* Axis data is reported with 8-bit resolution (values ranging from 0-255).
+
+* Only one JoystickXL device can be defined per CircuitPython board.  *You
+  cannot have a single board report as two or more independant joysticks.*
+
+* JoystickXL's reporting frequency - thus, input latency - is affected by
+  many factors, including processor speed, the number of inputs that need
+  to be processed, and the latency of any external input peripherals that
+  are being used.  The reporting frequency is going to be significantly
+  higher on a Metro M4 Express using on-board GPIO than it is on a QT-PY
+  using I2C/SPI-based I/O expanders. 
+  
 
 Host OS/Software Compatibility
 ==============================
-On **Windows 10**, all 8 axes 128 buttons and 4 hat switches are supported at
+On **Windows 10/11**, all 8 axes 128 buttons and 4 hat switches are supported at
 the operating system level, and JoystickXL has been tested and confirmed to work
 with the following games:
 
@@ -47,11 +68,12 @@ with the following games:
 * **Elite Dangerous** *(Limited to 32 buttons)*
 * **Star Citizen** *(All inputs)*
 * **Digital Combat Simulator (DCS) World** *(All inputs)*
+* **EverSpace 2** *(All inputs - hat switches are considered to be axes)*
 * **Forza Horizon 4** *(All inputs)*
 * **BeamNG.drive** *(Limited to 7 axes and 1 hat switch)*
 * **Farming Simulator 19** *(Limited to 7 axes, 24 buttons and 1 hat switch)*
 
-*Note that any game-specific input count limitations mentioned above are - to the
+*Note that any game-specific input limitations mentioned above are - to the
 best of my knowledge - a result of the game's joystick implementation, and are
 not unique to JoystickXL.*
 
@@ -72,7 +94,9 @@ Full documentation is available at `<https://circuitpython-joystickxl.readthedoc
 
 Installation
 ============
-1. Download the `latest release of JoystickXL <https://github.com/fasteddy516/CircuitPython_JoystickXL/releases/latest>`_.
+1. Download the `latest release of JoystickXL <https://github.com/fasteddy516/CircuitPython_JoystickXL/releases/latest>`_
+   that corresponds to the version of CircuitPython you're running.  (i.e.
+   ``joystick_xl_x.x.x_cp8`` for CircuitPython 8.x)
 2. Extract the files from the downloaded .zip archive.
 3. Copy the ``joystick_xl`` folder to the ``lib`` folder on your device's
    ``CIRCUITPY`` drive.
@@ -92,7 +116,15 @@ Using JoystickXL
       import usb_hid
       from joystick_xl.hid import create_joystick
 
-      usb_hid.enable((create_joystick(axes=2, buttons=2, hats=1),))
+      # enable default CircuitPython USB HID devices as well as JoystickXL
+      usb_hid.enable(
+        (
+          usb_hid.Device.KEYBOARD,
+          usb_hid.Device.MOUSE,
+          usb_hid.Device.CONSUMER_CONTROL,
+          create_joystick(axes=2, buttons=2, hats=1),
+        )
+      )
 
 2. Use JoystickXL in ``code.py`` like this:
 
