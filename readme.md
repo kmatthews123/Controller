@@ -25,17 +25,17 @@ I learned to use KiCAD 7.0 to design the custom PCB for this project. I have dab
 
 ![](images/Controller/1708568551189-8c589479-50fb-4185-b974-7172c95f6fee_1.jpg)
 
-![controller board v2.png](C:\Users\kmatt\Repos\Controller\images\Controller\controller%20board%20v2.png)
+![](C:\Users\kmatt\Repos\Controller\images\Controller\controller%20board%20v2.png)
 
 
 
-![controller board v2 back.png](C:\Users\kmatt\Repos\Controller\images\Controller\controller%20board%20v2%20back.png)
+![](C:\Users\kmatt\Repos\Controller\images\Controller\controller%20board%20v2%20back.png)
 
  I also did not know how PCB manufactures price out boards based on the amount of area that each board will take up in the batching process. Because of these things I found that I could save a bunch of money by making two distinct boards with one being the primary controller and the other being used for the shoulder buttons. the shoulder button board breaks in half for each side of the controller and everything is "wired" up really simply. I think adding an I2C analog input expansion board would have been a useful addition for this board (more on that later). I used OSH Park ~ for my PCB manufacturer because it was super easy to upload my KiCAD files to get them manufactured and the quality seems to be very good of the received circuit boards.
 
 ![](images/Controller/3f0d482f1e50713ee198d4d0fcb063d5.png)
 
-![febf4503518cea3cbbaec0d58e9b9419.png](C:\Users\kmatt\Repos\Controller\images\Controller\febf4503518cea3cbbaec0d58e9b9419.png)![](images/Controller/shoulder%20buttons.png)
+![](C:\Users\kmatt\Repos\Controller\images\Controller\febf4503518cea3cbbaec0d58e9b9419.png)![](images/Controller/shoulder%20buttons.png)
 
 and I used OnShape for the design of the body of the controller. I took a fairly simple approach to this and imported all the boards and as many components as i could find models for and built an assembled circuit board in an assembly. from there I used dimensions of the board to layout the base of the controller. From there I designed the front plate as a piece used to hold the shoulder buttons. the shoulder buttons are a bit rough admittedly, I considered a bunch of different ways of designing the buttons and I think the method I used is ok if I had executed it a bit better. If I were to do a full redesign I would probably do something more similar to paddles instead of the straight push buttons I ended up with. Lastly I designed the face plate of the controller based off the PCB assembly I had built before. Onshape has a really neat feature that allows for referencing assemblies in a part design workflow. this was really handy for designing parts in reference to other more complicated items. 
 
