@@ -4,7 +4,13 @@
     (thickness 1.6)
   )
 
-  (paper "A4")
+  (paper "A")
+  (title_block
+    (title "ROV Controller")
+    (date "2024-02-21")
+    (rev "2")
+  )
+
   (layers
     (0 "F.Cu" signal)
     (31 "B.Cu" signal)
